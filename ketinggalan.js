@@ -1,32 +1,21 @@
-// Inisialisasi antrian pembeli
-let antrian = ["ray", "fiki", "fadhilla", "farah"];
+// Inisialisasi antrian dengan pembeli awal
+let antrian = ['ray', 'fiki', 'fadhilla', 'farah'];
 
-// Fungsi untuk memperbarui tampilan antrian
-function updateQueue() {
-    console.log("Daftar Antrian:");
-    antrian.forEach(pembeli => {
-        console.log(pembeli);
-    });
-}
+// Pembeli baru datang
+antrian.push('nabila'); // Nabila datang
+antrian.push('maza', 'elsi'); // Maza dan Elsi datang
 
-// Proses sesuai urutan
-// 1. Nabila datang
-antrian.push("nabila");
+// Antrian terakhir (Elsi) tidak jadi antri dan pulang ke rumah
+antrian.pop(); // Menghapus Elsi dari antrian
 
-// 2. Maza dan Elsi datang
-antrian.push("maza", "elsi");
+// Antrian pertama (ray) sudah mendapatkan belanjaannya
+antrian.shift(); // Menghapus Ray dari antrian
 
-// 3. Antrian terakhir (Elsi) tidak jadi antri
-antrian.pop();
+// Antrian kedua (fiki) juga sudah mendapatkan belanjaannya
+antrian.shift(); // Menghapus Fiki dari antrian
 
-// 4. Antrian pertama (Ray) sudah mendapatkan belanjaannya
-antrian.shift();
+// Pembeli baru yang nyerobot antrian yaitu tomi
+antrian.unshift('tomi'); // Menambahkan Tomi ke depan antrian
 
-// 5. Antrian kedua (Fiki) sudah mendapatkan belanjaannya
-antrian.shift();
-
-// 6. Tomi datang dan nyerobot antrian
-antrian.unshift("tomi");
-
-// Update tampilan antrian
-updateQueue();
+// Menampilkan hasil akhir antrian di console
+console.log(antrian);
